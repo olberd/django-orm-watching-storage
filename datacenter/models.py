@@ -45,5 +45,6 @@ class Visit(models.Model):
 
 
 def format_duration(duration):
-    time = datetime.timedelta(seconds=duration)
-    return time
+    hours = int(duration // 3600)
+    minutes = int((duration % 3600) // 60)
+    return f'{hours:d}ч {minutes:02d}мин'
