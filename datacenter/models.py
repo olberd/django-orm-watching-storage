@@ -41,7 +41,7 @@ class Visit(models.Model):
             duration = localtime() - localtime(self.entered_at)
         else:
             duration = self.leaved_at - self.entered_at
-        return int(duration.total_seconds())
+        return duration.total_seconds()
 
 
 def format_duration(duration):
